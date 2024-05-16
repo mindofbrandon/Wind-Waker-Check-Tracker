@@ -5,7 +5,6 @@
 <div>
   <h1>Upload a File</h1>
   <input type="file" (change)="onFileSelected($event)" accept=".txt">
-  <button (click)="processFile()">Process File</button>
 </div>
 
 <mat-accordion *ngIf="groupedLines">

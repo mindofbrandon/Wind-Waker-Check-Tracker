@@ -111,12 +111,4 @@ export class AppComponent implements OnInit {
   getObjectKeys(obj: any): string[] {
     return Object.keys(obj);
   }
-
-  // Parse the file content and group lines by section
-  processFile() {
-    // Process the file content here (optional)
-    this.groupedLines = this.groupLinesBySection(this.fileContent);
-    console.log(this.groupedLines);
-    
-  }
 }
