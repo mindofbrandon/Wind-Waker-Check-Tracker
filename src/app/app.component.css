@@ -1,0 +1,17 @@
+h1 {
+  color: #fff;
+}
+
+input {
+  color: #fff;
+}
+
+footer {
+    background-color: #7b1fa2;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
