@@ -16,7 +16,7 @@
     </mat-expansion-panel-header>
 
     <ng-container *ngIf="groupedLines[section]">
-      <mat-expansion-panel *ngFor="let location of getObjectKeys(groupedLines[section])">
+      <mat-expansion-panel *ngFor="let location of getObjectKeys(groupedLines[section])" [ngClass]="{'completed-location': isLocationCompleted(section, location)}">
         <mat-expansion-panel-header>
           <mat-panel-title>
             {{ location }}
@@ -33,12 +33,5 @@
     </ng-container>
   </mat-expansion-panel>
 </mat-accordion>
-
-
-<footer>
-  <!-- Footer content -->
-  <p>Made by MindOfBrandon</p>
-  <p>Contact: info&#64;example.com</p>
-</footer>
 
 <router-outlet />

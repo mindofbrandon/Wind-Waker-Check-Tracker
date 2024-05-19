@@ -43,6 +43,7 @@ export class AppComponent implements OnInit {
     if (storedData) {
       this.groupedLines = JSON.parse(storedData);
     }
+    this.sortLocationsAlphabetically();
   }
 
   onFileSelected(event: any): void {
@@ -108,6 +109,27 @@ export class AppComponent implements OnInit {
     return groupedLines;
   }
 
+  isLocationCompleted(section: keyof GroupedLines, location: string): boolean {
+    if (this.groupedLines) {
+      return this.groupedLines[section][location].every(item => item.completed);
+    }
+    return false;
+  }
+
+  sortLocationsAlphabetically(): void {
+    if (this.groupedLines) {
+      for (const section of this.sections) {
+        const sectionData = this.groupedLines[section];
+        const sortedLocations = Object.keys(sectionData).sort();
+        const sortedSectionData: Location = {};
+        sortedLocations.forEach(location => {
+          sortedSectionData[location] = sectionData[location];
+        });
+        this.groupedLines[section] = sortedSectionData;
+      }
+    }
+  }
+  
   getObjectKeys(obj: any): string[] {
     return Object.keys(obj);
   }
